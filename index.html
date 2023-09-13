@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Activity</title>
+  
+</head>
+<body>
+    <label for="num">Enter list of numbers: </label>
+    <input type="text" id="numberInt" placeholder="ex. 1 2 3 4 5">
+    <input type="submit" value="Enter" onclick="detectNum()">
+    <br><br>
+    <p>For Number 2 in the activity</p>
+    <input type="submit" value="Click Here" onclick="login()">
+
+    <script>
+        function detectNum(){
+            var inputElement = document.getElementById("numberInt");
+            var inputText = inputElement.value;
+            var numbersArray = inputText.split(' ').map(Number);
+
+            var detectNum5 = false;
+            for (var i = 0; i < numbersArray.length; i++) {
+                if (String(numbersArray[i]).includes('5')) {
+                    detectNum5 = true;
+                    break;
+                }
+            }
+
+            if (detectNum5) {
+                alert("!!!!!");
+            } else {
+                alert("There is no number 5 in the array.");
+            }
+        }
+        //for number 2 in the activity
+        let obj = [
+                {username: "user1", password: "password"},
+                {username: "user2", password: "password1"},
+                {username: "user3", password: "password2"},
+                {username: "user4", password: "thispassword"},
+            ]
+
+        function login() {
+        var username = prompt("Enter your username:");
+        var password = prompt("Enter your password:");
+
+        var checkLoginCredits = false;
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].username === username && obj[i].password === password) {
+                checkLoginCredits = true;
+                break;
+            }
+        }
+        if (checkLoginCredits) {
+            alert("Login successful. Welcome, " + username + "!");
+        } else {
+            alert("Invalid credentials. Please try again.");
+        }
+        }
+    </script>
+</body>
+</html>
