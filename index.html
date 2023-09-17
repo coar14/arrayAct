@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <title>Array Activity</title>
+    <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
-    <label for="num">Enter list of numbers: </label>
-    <input type="text" id="numberInt" placeholder="ex. 1 2 3 4 5">
-    <input type="submit" value="Enter" onclick="detectNum()">
-    <br><br>
-    <p>For Number 2 in the activity</p>
-    <input type="submit" value="Click Here" onclick="login()">
-
+    <div class="container">
+        <div class="intro">
+            <p class="p_intro">Welcome to <br> Array DOM <br> </p>
+            <input type="submit" value="Login" class="login" onclick="login()">
+        </div>
+    </div>
+    
+    <div class="game">
+        <p>Instruction: Provide any number you have in mind and enter it. Observe
+            an alert will pop-out, and see what will happen. Enjoy!
+        </p>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="numberInt" placeholder="ex. 1 2 3 4 5">
+            <label for="numberInt">Input any number</label>
+        </div>
+        <input type="submit" value="Enter" onclick="detectNum()">
+        <input type="submit" value="Back To Login" onclick="backToLogin()">
+    </div>
     <script>
         function detectNum(){
             var inputElement = document.getElementById("numberInt");
@@ -55,10 +69,18 @@
         }
         if (checkLoginCredits) {
             alert("Login successful. Welcome, " + username + "!");
+            document.querySelector('.intro').style.display = 'none';
+            document.querySelector('.game').style.display = 'block';
+
         } else {
             alert("Invalid credentials. Please try again.");
         }
         }
+        function backToLogin() {
+            document.querySelector('.game').style.display = 'none';
+            document.querySelector('.intro').style.display = 'block';
+        }
+
     </script>
 </body>
 </html>

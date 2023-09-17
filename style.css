@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    box-sizing: none;
+    outline: none;
+}
+.game{
+    display: none;
+}
+.intro {
+    margin-top: 15%;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Ubuntu';
+    font-size: 40pt;
+    justify-content: center;
+}
